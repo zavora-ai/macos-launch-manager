@@ -532,3 +532,29 @@ extension ServiceManager {
         return lines.joined(separator: "\n")
     }
 }
+
+
+extension ServiceManager {
+    /// Open the Launch Manager GUI app
+    func openGUI() -> String {
+        let appPaths = [
+            "/Applications/LaunchManager.app",
+            NSHomeDirectory() + "/Applications/LaunchManager.app",
+        ]
+
+        for path in appPaths {
+            if fm.fileExists(atPath: path) {
+                let result = shell("/usr/bin/open", [path])
+                return result.isEmpty ? "Opened Launch Manager GUI" : "Error: \(result)"
+            }
+        }
+
+        // Try by bundle ID
+        let result = shell("/usr/bin/open", ["-b", "com.launchmanager.app"])
+        if !result.contains("Unable") && !result.contains("error") {
+            return "Opened Launch Manager GUI"
+        }
+
+        return "Launch Manager.app not found. Install with: lm gui"
+    }
+}

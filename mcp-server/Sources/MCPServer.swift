@@ -224,6 +224,12 @@ class MCPServer {
                         "label": ["type": "string", "description": "Service label to check"]
                     ],
                     required: ["label"]
+                ),
+                makeTool(
+                    name: "launchd_open_gui",
+                    description: "Open the Launch Manager GUI application. Installs it if not found in /Applications.",
+                    properties: [:],
+                    required: []
                 )
             ]
         ]
@@ -290,6 +296,8 @@ class MCPServer {
             result = serviceManager.printDisabled(domain: arguments["domain"] as? String ?? "user")
         case "launchd_override_status":
             result = serviceManager.overrideStatus(label: arguments["label"] as? String ?? "")
+        case "launchd_open_gui":
+            result = serviceManager.openGUI()
         default:
             return makeError(id: nil, code: -32602, message: "Unknown tool: \(toolName)")
         }

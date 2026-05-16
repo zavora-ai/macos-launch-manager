@@ -128,6 +128,10 @@ lm info <label>             # launchctl print output
 lm create com.co.svc -p /path/to/bin --run-at-load
 lm delete <label>           # Remove service
 lm edit <label>             # Open plist in $EDITOR
+
+# GUI
+lm gui                      # Open GUI app (installs if needed)
+lm gui --reinstall          # Force reinstall from GitHub
 ```
 
 ### Label Matching

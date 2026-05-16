@@ -129,6 +129,10 @@ lm delete -y <label>               # Skip confirmation
 
 # Edit
 lm edit <label>                     # Open plist in $EDITOR
+
+# GUI
+lm gui                              # Open GUI app (installs if not found)
+lm gui --reinstall                  # Force reinstall GUI from GitHub
 ```
 
 ### Domains
@@ -173,6 +177,10 @@ The MCP server exposes launchd management as tools for AI assistants. It impleme
 | `launchd_delete` | Unload and remove a service |
 | `launchd_plist_read` | Read raw XML plist content |
 | `launchd_plist_write` | Write/update plist content with validation |
+| `launchd_force_reload` | Clear stale state and reload (bootout + enable + bootstrap) |
+| `launchd_print_disabled` | Query launchd's internal disabled overrides database |
+| `launchd_override_status` | Detect conflicts between plist and launchd override state |
+| `launchd_open_gui` | Open the Launch Manager GUI app |
 
 ### Configuration
 
@@ -209,6 +217,9 @@ Once configured, you can ask your AI assistant:
 - "Show me the logs for yabai"
 - "Create a new service that runs my backup script every hour"
 - "Disable the Google updater from running at login"
+- "Force reload the adk-gateway service — it's stuck"
+- "Check if any services have conflicting disabled states"
+- "Open the Launch Manager GUI"
 
 ## GUI Features
 
