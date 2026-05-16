@@ -9,7 +9,7 @@
 ## Project Setup
 
 ```bash
-git clone https://github.com/zavora/macos-launch-manager.git
+git clone https://github.com/zavora-ai/macos-launch-manager.git
 cd macos-launch-manager
 ```
 

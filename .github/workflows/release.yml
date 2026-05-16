@@ -83,17 +83,17 @@ jobs:
 
             ### CLI (one-liner)
             ```bash
-            curl -fsSL https://raw.githubusercontent.com/zavora/macos-launch-manager/main/scripts/install.sh | bash
+            curl -fsSL https://raw.githubusercontent.com/zavora-ai/macos-launch-manager/main/scripts/install.sh | bash
             ```
 
             ### CLI (Homebrew)
             ```bash
-            brew install zavora/tap/lm
+            brew install zavora-ai/tap/lm
             ```
 
             ### CLI (manual binary)
             ```bash
-            curl -L https://github.com/zavora/macos-launch-manager/releases/download/${{ github.ref_name }}/lm-${{ github.ref_name }}-macos-universal.tar.gz | tar xz
+            curl -L https://github.com/zavora-ai/macos-launch-manager/releases/download/${{ github.ref_name }}/lm-${{ github.ref_name }}-macos-universal.tar.gz | tar xz
             sudo mv lm /usr/local/bin/
             ```
 

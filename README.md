@@ -19,13 +19,13 @@ macOS uses `launchd` to manage all background services, but there's no built-in 
 ### CLI — One-liner (recommended)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zavora/macos-launch-manager/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/zavora-ai/macos-launch-manager/main/scripts/install.sh | bash
 ```
 
 ### CLI — Homebrew
 
 ```bash
-brew tap zavora/tap
+brew tap zavora-ai/tap
 brew install lm
 ```
 
@@ -33,14 +33,14 @@ brew install lm
 
 ```bash
 # From GitHub Releases (no Swift/Xcode needed)
-curl -L https://github.com/zavora/macos-launch-manager/releases/latest/download/lm-v1.0.0-macos-universal.tar.gz | tar xz
+curl -L https://github.com/zavora-ai/macos-launch-manager/releases/latest/download/lm-v1.0.0-macos-universal.tar.gz | tar xz
 sudo mv lm /usr/local/bin/
 ```
 
 ### CLI — Build from source
 
 ```bash
-git clone https://github.com/zavora/macos-launch-manager.git
+git clone https://github.com/zavora-ai/macos-launch-manager.git
 cd macos-launch-manager/cli
 swift build -c release
 cp .build/release/lm /usr/local/bin/lm
@@ -55,7 +55,7 @@ cp .build/release/lm /usr/local/bin/lm
 # Open DMG → drag to Applications
 ```
 
-Or download from [GitHub Releases](https://github.com/zavora/macos-launch-manager/releases).
+Or download from [GitHub Releases](https://github.com/zavora-ai/macos-launch-manager/releases).
 
 ## CLI Usage
 

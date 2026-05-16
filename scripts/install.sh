@@ -3,10 +3,10 @@
 # install.sh — Quick installer for lm (Launch Manager CLI)
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/zavora/macos-launch-manager/main/scripts/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/zavora-ai/macos-launch-manager/main/scripts/install.sh | bash
 #
 # Or manually:
-#   git clone https://github.com/zavora/macos-launch-manager.git
+#   git clone https://github.com/zavora-ai/macos-launch-manager.git
 #   cd macos-launch-manager/cli && swift build -c release
 #   cp .build/release/lm /usr/local/bin/lm
 #
@@ -43,7 +43,7 @@ fi
 
 INSTALL_DIR="/usr/local/bin"
 TEMP_DIR=$(mktemp -d)
-REPO_URL="https://github.com/zavora/macos-launch-manager.git"
+REPO_URL="https://github.com/zavora-ai/macos-launch-manager.git"
 
 # Check if already installed
 if command -v lm &> /dev/null; then
