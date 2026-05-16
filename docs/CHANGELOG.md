@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-05-16
+
+### Added
+
+- **MCP Server** — Full Model Context Protocol server for AI-assisted launchd management
+  - 18 tools covering complete launchd lifecycle
+  - JSON-RPC 2.0 over stdio transport
+  - Zero external dependencies (pure Swift)
+  - Works with Kiro, Claude Desktop, and any MCP client
+
+- **New tools for launchctl parity:**
+  - `launchd_force_reload` — Clears stale state (enable → bootout → bootstrap). Fixes services stuck with I/O errors
+  - `launchd_print_disabled` — Queries launchd's internal disabled overrides database (separate from plist `Disabled` key)
+  - `launchd_override_status` — Detects conflicts between plist `Disabled` key and launchd's override database
+
+- **Smart start/load recovery:**
+  - Automatically checks `print-disabled` before bootstrap
+  - Enables service in override database if disabled there
+  - Detects "Bootstrap failed: 5: Input/output error" and auto-recovers (enable → bootout stale → retry)
+
+- **Distribution:**
+  - Homebrew tap (`brew tap zavora-ai/tap && brew install lm`)
+  - One-liner install script
+  - GitHub Actions release workflow with pre-built universal binaries
+  - GitHub Release with DMG + CLI binary assets
+
+### Fixed
+
+- Sidebar navigation not switching domains (replaced NavigationLink with List selection + .tag())
+- Detail view showing stale data from previous service (added .id(service.id))
+- Detail view persisting after service deletion (added onDelete callback)
+- "Running" and "Loaded" filter buttons replaced with circular color indicators
+- "Updated X ago" timestamp relocated to bottom-left status bar
+- App icon now displays in Dock
+
 ## [1.0.0] - 2026-05-16
 
 ### Added

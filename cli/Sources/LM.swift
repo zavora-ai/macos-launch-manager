@@ -6,7 +6,7 @@ struct LM: ParsableCommand {
     static let configuration = CommandConfiguration(
         commandName: "lm",
         abstract: "Launch Manager — macOS launchd service manager",
-        version: "1.0.0",
+        version: "1.1.0",
         subcommands: [
             List.self,
             Status.self,

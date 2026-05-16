@@ -4,7 +4,7 @@
 class Lm < Formula
   desc "macOS launchd service manager - CLI interface"
   homepage "https://github.com/zavora-ai/macos-launch-manager"
-  url "https://github.com/zavora-ai/macos-launch-manager/archive/refs/tags/v1.0.0.tar.gz"
+  url "https://github.com/zavora-ai/macos-launch-manager/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "PLACEHOLDER_SHA256"
   license "Apache-2.0"
 
